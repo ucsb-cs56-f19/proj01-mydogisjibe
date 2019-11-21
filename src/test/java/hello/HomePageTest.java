@@ -61,4 +61,12 @@ public class HomePageTest {
                 .andExpect(xpath("//title").exists())
                 .andExpect(xpath("//title").string("Getting Started: Serving Web Content"));
     }
+
+    @Test
+    public void getHomePage_hasCorrectTitle() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/a").exists())
+                .andExpect(xpath("/html/body/div/nav/a").string("lab07"));
+    }
 }
