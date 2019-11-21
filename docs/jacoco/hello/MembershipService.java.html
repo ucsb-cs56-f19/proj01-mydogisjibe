@@ -27,8 +27,8 @@ public interface MembershipService {
     }
 
     default public String role(OAuth2AuthenticationToken token) {
-<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if (token==null)</span>
-<span class="fc" id="L31">            return &quot;Guest&quot;;</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (token==null)</span>
+<span class="nc" id="L31">            return &quot;Guest&quot;;</span>
 <span class="nc bnc" id="L32" title="All 2 branches missed.">        if (isMember(token))</span>
 <span class="nc" id="L33">            return &quot;Member&quot;;</span>
 <span class="nc bnc" id="L34" title="All 2 branches missed.">        if (isAdmin(token))</span>
