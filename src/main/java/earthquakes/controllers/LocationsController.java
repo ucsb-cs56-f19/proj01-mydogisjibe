@@ -22,12 +22,12 @@ import earthquakes.services.LocationQuery;
 @Controller
 public class LocationsController {
 
-    @GetMapping("/location/search")
+    @GetMapping("/locations/search")
     public String getLocationSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken, LocSearch locSearch) {
-        return "location/search";
+        return "locations/search";
     }
 
-    @GetMapping("/location/results")
+    @GetMapping("/locations/results")
     public String getLocationResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken, LocSearch locSearch) {
 
 
@@ -41,6 +41,6 @@ public class LocationsController {
         model.addAttribute("json", json);
         List<Place> places = Place.listFromJSON(json);
         model.addAttribute("places", places); 
-        return "location/results";
+        return "locations/results";
     }
 }
