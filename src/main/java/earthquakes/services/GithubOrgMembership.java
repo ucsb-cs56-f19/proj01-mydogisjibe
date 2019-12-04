@@ -1,4 +1,4 @@
-package hello;
+package earthquakes.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,16 +23,16 @@ import com.jcabi.http.response.JsonResponse;
  * Service object that wraps the UCSB Academic Curriculum API
  */
 @Service
-public class GithubOrgMembershipService implements MembershipService {
+public class GithubOrgMembership implements Membership {
 
-    private Logger logger = LoggerFactory.getLogger(GithubOrgMembershipService.class);
+    private Logger logger = LoggerFactory.getLogger(GithubOrgMembership.class);
 
     private String githubOrg;
 
     @Autowired
     private OAuth2AuthorizedClientService clientService;
 
-    public GithubOrgMembershipService(@Value("${app_github_org}") String githubOrg) {
+    public GithubOrgMembership(@Value("${app_github_org}") String githubOrg) {
         this.githubOrg = githubOrg;
         logger.info("githubOrg=" + githubOrg);
     }

@@ -1,4 +1,4 @@
-package hello;
+package earthquakes.services;
 
 import java.util.Arrays;
 
@@ -19,9 +19,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
-public class EarthquakeQueryService {
+public class EarthquakeQuery {
 
-    private Logger logger = LoggerFactory.getLogger(EarthquakeQueryService.class);
+    private Logger logger = LoggerFactory.getLogger(EarthquakeQuery.class);
 
     public String getJSON(int distance, int minmag) {
         RestTemplate restTemplate = new RestTemplate();
@@ -50,7 +50,7 @@ public class EarthquakeQueryService {
         } catch (HttpClientErrorException e) {
             retVal = "{\"error\": \"401: Unauthorized\"}";
         }
-        logger.info("from EarthquakeQueryService.getJSON: " + retVal);
+        logger.info("from EarthquakeQuery.getJSON: " + retVal);
         return retVal;
     }
 
