@@ -69,15 +69,24 @@ public class HomePageTest {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
                 .andExpect(xpath("/html/body/div/nav/a").exists())
-                .andExpect(xpath("/html/body/div/nav/a").string("lab07"));
+                .andExpect(xpath("/html/body/div/nav/a").string("proj01"));
     }
 
     @Test
     public void getHomePage_hasCorrectFirstPage() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/div/ul/li[1]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul/li[1]/a").string("Earthquake Search"));
+    }
+
+
+    @Test
+    public void getHomePage_hasCorrectLocPage() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
                 .andExpect(xpath("/html/body/div/nav/div/ul/li[2]/a").exists())
-                .andExpect(xpath("/html/body/div/nav/div/ul/li[2]/a").string("Earthquake Search"));
+                .andExpect(xpath("/html/body/div/nav/div/ul/li[2]/a").string("Locations"));
     }
 
     @Test
