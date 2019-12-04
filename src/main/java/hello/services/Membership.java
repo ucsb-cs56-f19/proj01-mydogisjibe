@@ -1,8 +1,8 @@
-package hello;
+package hello.services;
 
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 
-public interface MembershipService {
+public interface Membership {
 
     /** is current logged in user a member but NOT an admin
      * of the github org 
