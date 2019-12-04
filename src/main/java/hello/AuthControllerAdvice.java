@@ -7,6 +7,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import hello.repositories.UserRepository;
 import hello.entities.AppUser;
+import hello.services.Membership;
 import java.util.List;
 
 @ControllerAdvice
@@ -15,7 +16,7 @@ public class AuthControllerAdvice {
     private UserRepository userRepository;
 
     @Autowired   
-    private MembershipService membershipService;
+    private Membership membershipService;
 
     @ModelAttribute("isLoggedIn")
     public boolean getIsLoggedIn(OAuth2AuthenticationToken token){
