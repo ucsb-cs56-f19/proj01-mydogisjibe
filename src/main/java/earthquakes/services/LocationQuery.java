@@ -40,7 +40,7 @@ public class LocationQuery {
         String retVal="";
         try {
             String params = String.format("%s/?format=json",
-                URLEncoder.encode(location, StandardCharsets.UTF_8.toString())
+                location
             );
 
             String url = uri + params;
@@ -52,9 +52,7 @@ public class LocationQuery {
             retVal = re.getBody();
         } catch (HttpClientErrorException e) {
             retVal = "{\"error\": \"401: Unauthorized\"}";
-        } catch(UnsupportedEncodingException e) {
-            logger.error("Unsupported Encoding Exception Received");
-        }
+        } 
         logger.info("from LocationQuery.getJSON: " + retVal);
         return retVal;
     }
