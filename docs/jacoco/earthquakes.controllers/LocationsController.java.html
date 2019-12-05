@@ -22,12 +22,12 @@ import earthquakes.services.LocationQuery;
 @Controller
 <span class="nc" id="L23">public class LocationsController {</span>
 
-    @GetMapping(&quot;/location/search&quot;)
+    @GetMapping(&quot;/locations/search&quot;)
     public String getLocationSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken, LocSearch locSearch) {
-<span class="nc" id="L27">        return &quot;location/search&quot;;</span>
+<span class="nc" id="L27">        return &quot;locations/search&quot;;</span>
     }
 
-    @GetMapping(&quot;/location/results&quot;)
+    @GetMapping(&quot;/locations/results&quot;)
     public String getLocationResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken, LocSearch locSearch) {
 
 
@@ -41,7 +41,7 @@ import earthquakes.services.LocationQuery;
 <span class="nc" id="L41">        model.addAttribute(&quot;json&quot;, json);</span>
 <span class="nc" id="L42">        List&lt;Place&gt; places = Place.listFromJSON(json);</span>
 <span class="nc" id="L43">        model.addAttribute(&quot;places&quot;, places); </span>
-<span class="nc" id="L44">        return &quot;location/results&quot;;</span>
+<span class="nc" id="L44">        return &quot;locations/results&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
